@@ -18,6 +18,10 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: '', passwordVariable: 'AWS Secret Access Key', usernameVariable: 'AWS Access Key ID')]) {
                 // some block
+                    sh '''
+                       aws --version
+                          aws s3 ls
+                    '''      
 }
             }
         }
