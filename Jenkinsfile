@@ -15,6 +15,7 @@ pipeline {
                             -e AWS_ACCESS_KEY_ID \
                             -e AWS_SECRET_ACCESS_KEY \
                             amazon/aws-cli --version
+                            aws s3 ls
                     '''
                 }
             }
