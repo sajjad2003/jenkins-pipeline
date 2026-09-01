@@ -14,8 +14,14 @@ pipeline {
                         docker run --rm \
                             -e AWS_ACCESS_KEY_ID \
                             -e AWS_SECRET_ACCESS_KEY \
+                            -e AWS_DEFAULT_REGION=us-east-1 \
                             amazon/aws-cli --version
-                            aws s3 ls
+
+                        docker run --rm \
+                            -e AWS_ACCESS_KEY_ID \
+                            -e AWS_SECRET_ACCESS_KEY \
+                            -e AWS_DEFAULT_REGION=us-east-1 \
+                            amazon/aws-cli s3 ls
                     '''
                 }
             }
